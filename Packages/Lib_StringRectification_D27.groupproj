@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B891BA0F-4C36-4EB6-8CEF-554CC335FF0F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="D27\Lib_StringRectification.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Lib_StringRectification">
+        <MSBuild Projects="D27\Lib_StringRectification.dproj"/>
+    </Target>
+    <Target Name="Lib_StringRectification:Clean">
+        <MSBuild Projects="D27\Lib_StringRectification.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Lib_StringRectification:Make">
+        <MSBuild Projects="D27\Lib_StringRectification.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Lib_StringRectification"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Lib_StringRectification:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Lib_StringRectification:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
