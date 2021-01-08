@@ -10,7 +10,7 @@
       <SearchPaths>
         <IncludeFiles Value="..\..\Source\Include"/>
         <OtherUnitFiles Value="..\..\Source"/>
-        <UnitOutputDirectory Value="..\..\Lib\FPC\$(TargetCPU)-$(TargetOS)\"/>
+        <UnitOutputDirectory Value="..\..\Lib\FPC\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
     <Description Value="Main aim of this library is to simplify conversions in Lazarus when passing strings to RTL or WinAPI - mainly to ensure the same code can be used in all compilers (Delphi, FPC 2.x.x, FPC 3.x.x) without a need for symbol checks. It also provides set of functions for string comparison that encapsulates some of the intricacies given by different approach in different compilers."/>

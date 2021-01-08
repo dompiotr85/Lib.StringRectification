@@ -136,6 +136,27 @@ const
   deprecated UTF8Decode/UTF8Encode. They are here for use in older compilers. }
 
 {$IF NOT DECLARED(UTF8ToString)}
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   <para>
+///     Converts a UTF-8 encoded string to a UnicodeString.
+///   </para>
+///   <para>
+///     Call <b>UTF8ToString</b> to convert a UTF-8 encoded string to a
+///     UnicodeString. <c>Str</c> is a string or an array of UTF-8 encoded
+///     characters.
+///   </para>
+///   <para>
+///     The result of the function is the corresponding decoded string value.
+///   </para>
+/// </summary>
+/// <param name="Str">
+///   String or an array of UTF-8 encoded characters.
+/// </param>
+/// <returns>
+///   Returns converted UnicodeString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function UTF8ToString(const Str: UTF8String): UnicodeString; {$IFDEF CanInline}inline;{$ENDIF}
  {$DEFINE Implement_UTF8ToString}
 {$IFEND}
@@ -143,6 +164,23 @@ function UTF8ToString(const Str: UTF8String): UnicodeString; {$IFDEF CanInline}i
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
 {$IF NOT DECLARED(StringToUTF8)}
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   <para>
+///     Converts a string to UTF-8 encoded string.
+///   </para>
+///   <para>
+///     Call <b>StringToUTF8</b> to convert a string to a UTF-8 encoded string.
+///     string.
+///   </para>
+/// </summary>
+/// <param name="Str">
+///   Unicode string or an array of Unicode characters.
+/// </param>
+/// <returns>
+///   Returns converted UTF-8 encoded string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StringToUTF8(const Str: UnicodeString): UTF8String; {$IFDEF CanInline}inline;{$ENDIF}
  {$DEFINE Implement_StringToUTF8}
 {$IFEND}
@@ -245,62 +283,338 @@ type
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Convers a string to a short string.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to short string.
+/// </param>
+/// <returns>
+///   Returns converted ShortString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToShort(const Str: String): ShortString; {$IF DEFINED(CanInline) AND DEFINED(FPC)}inline;{$IFEND}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Convers a short string to a string.
+/// </summary>
+/// <param name="Str">
+///   A short string that will be converted to string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function ShortToStr(const Str: ShortString): String; {$IF DEFINED(CanInline) AND DEFINED(FPC)}inline;{$IFEND}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to an AnsiString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to AnsiString.
+/// </param>
+/// <returns>
+///   Returns converted AnsiString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToAnsi(const Str: String): AnsiString; {$IF DEFINED(CanInline) AND DEFINED(FPC)}inline;{$IFEND}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts an AnsiString to a string.
+/// </summary>
+/// <param name="Str">
+///   An AnsiString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function AnsiToStr(const Str: AnsiString): String; {$IF DEFINED(CanInline) AND DEFINED(FPC)}inline;{$IFEND}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to UTF-8 encoded string.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to UTF-8 encoded string.
+/// </param>
+/// <returns>
+///   Returns converted UTF-8 encoded string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToUTF8(const Str: String): UTF8String; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts UTF-8 encoded string to a string.
+/// </summary>
+/// <param name="Str">
+///   UTF-8 encoded string that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function UTF8ToStr(const Str: UTF8String): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a WideString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to a WideString.
+/// </param>
+/// <returns>
+///   Returns converted WideString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToWide(const Str: String): WideString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a WideString to a string.
+/// </summary>
+/// <param name="Str">
+///   A WideString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function WideToStr(const Str: WideString): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a UnicodeString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to a UnicodeString.
+/// </param>
+/// <returns>
+///   Returns converted UnicodeString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToUnicode(const Str: String): UnicodeString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a UnicodeString to a string.
+/// </summary>
+/// <param name="Str">
+///   A UnicodeString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function UnicodeToStr(const Str: UnicodeString): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a RTL string.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to a RTL string.
+/// </param>
+/// <returns>
+///   Returns converted TRTLString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToRTL(const Str: String): TRTLString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a RTL string to a string.
+/// </summary>
+/// <param name="Str">
+///   A RTL string that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function RTLToStr(const Str: TRTLString): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a GUI string.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to a GUI string.
+/// </param>
+/// <returns>
+///   Returns converted TGUIString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToGUI(const Str: String): TGUIString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a GUI string to a string.
+/// </summary>
+/// <param name="Str">
+///   A GUI string that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function GUIToStr(const Str: TGUIString): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to an AnsiString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to an AnsiString.
+/// </param>
+/// <returns>
+///   Returns converted AnsiString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToWinA(const Str: String): AnsiString; {$IF DEFINED(CanInline) AND DEFINED(FPC)}inline;{$IFEND}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts an AnsiString to a string.
+/// </summary>
+/// <param name="Str">
+///   An AnsiString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function WinAToStr(const Str: AnsiString): String; {$IF DEFINED(CanInline) AND DEFINED(FPC)}inline;{$IFEND}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a WideString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to a WideString.
+/// </param>
+/// <returns>
+///   Returns converted WideString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToWinW(const Str: String): WideString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a WideString to a string.
+/// </summary>
+/// <param name="Str">
+///   A WideString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function WinWToStr(const Str: WideString): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a TWinString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to a TWinString.
+/// </param>
+/// <returns>
+///   Returns converted TWinString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToWin(const Str: String): TWinString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a TWinString to a string.
+/// </summary>
+/// <param name="Str">
+///   A TWinString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function WinToStr(const Str: TWinString): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a TCSLString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to TCSLString.
+/// </param>
+/// <returns>
+///   Returns converted TCSLString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToCsl(const Str: String): TCSLString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a TCSLString to a string.
+/// </summary>
+/// <param name="Str">
+///   A TCSLString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function CslToStr(const Str: TCSLString): String; {$IFDEF CanInline}inline;{$ENDIF}
 
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a string to a TSysString.
+/// </summary>
+/// <param name="Str">
+///   A string that will be converted to a TSysString.
+/// </param>
+/// <returns>
+///   Returns converted TSysString.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StrToSys(const Str: String): TSysString; {$IFDEF CanInline}inline;{$ENDIF}
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Converts a TSysString to a string.
+/// </summary>
+/// <param name="Str">
+///   A TSysString that will be converted to a string.
+/// </param>
+/// <returns>
+///   Returns converted string.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function SysToStr(const Str: TSysString): String; {$IFDEF CanInline}inline;{$ENDIF}
 {$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 
@@ -308,11 +622,140 @@ function SysToStr(const Str: TSysString): String; {$IFDEF CanInline}inline;{$END
 {- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
 
 {$IFDEF SUPPORTS_REGION}{$REGION 'Explicit string comparison functions declaration'}{$ENDIF}
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Compares two strings which are of ShortString type. If CaseSensitive flag
+///   is set to True, comparing will be character's case sensitive.
+/// </summary>
+/// <param name="A">
+///   First string of ShortString type.
+/// </param>
+/// <param name="B">
+///   Second string of ShortString type.
+/// </param>
+/// <param name="CaseSensitive">
+///   CaseSensitive flag.
+/// </param>
+/// <returns>
+///   Returns a value less than 0 if A < B, a value greater than 0 if A > B, and
+///   0 if A = B.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function ShortStringCompare(const A, B: ShortString; CaseSensitive: Boolean): Integer;
+
+{- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Compares two strings which are of AnsiString type. If CaseSensitive flag
+///   is set to True, comparing will be character's case sensitive.
+/// </summary>
+/// <param name="A">
+///   First string of AnsiString type.
+/// </param>
+/// <param name="B">
+///   Second string of AnsiString type.
+/// </param>
+/// <param name="CaseSensitive">
+///   CaseSensitive flag.
+/// </param>
+/// <returns>
+///   Returns a value less than 0 if A < B, a value greater than 0 if A > B, and
+///   0 if A = B.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function AnsiStringCompare(const A, B: AnsiString; CaseSensitive: Boolean): Integer;
+
+{- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Compares two strings which are UTF-8 encoded string type. If CaseSensitive
+///   flag is set to True, comparing will be character's case sensitive.
+/// </summary>
+/// <param name="A">
+///   First string of UTF-8 encoding string type.
+/// </param>
+/// <param name="B">
+///   Second string of UTF-8 encoding string type.
+/// </param>
+/// <param name="CaseSensitive">
+///   CaseSensitive flag.
+/// </param>
+/// <returns>
+///   Returns a value less than 0 if A < B, a value greater than 0 if A > B, and
+///   0 if A = B.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function UTF8StringCompare(const A, B: UTF8String; CaseSensitive: Boolean): Integer;
+
+{- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Compares two strings which are WideString type. If CaseSensitive flag is
+///   set to True, comparing will be character's case sensitive.
+/// </summary>
+/// <param name="A">
+///   First string of WideString type.
+/// </param>
+/// <param name="B">
+///   Second string of WideString type.
+/// </param>
+/// <param name="CaseSensitive">
+///   CaseSensitive flag.
+/// </param>
+/// <returns>
+///   Returns a value less than 0 if A < B, a value greater than 0 if A > B, and
+///   0 if A = B.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function WideStringCompare(const A, B: WideString; CaseSensitive: Boolean): Integer;
+
+{- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Compares two strings which are UnicodeString type. If CaseSensitive flag
+///   is set to True, comparing will be character's case sensitive.
+/// </summary>
+/// <param name="A">
+///   First string of UnicodeString type.
+/// </param>
+/// <param name="B">
+///   Second string of UnicodeString type.
+/// </param>
+/// <param name="CaseSensitive">
+///   CaseSensitive flag.
+/// </param>
+/// <returns>
+///   Returns a value less than 0 if A < B, a value greater than 0 if A > B, and
+///   0 if A = B.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function UnicodeStringCompare(const A, B: UnicodeString; CaseSensitive: Boolean): Integer;
+
+{- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - }
+
+{$IFDEF SUPPORTS_REGION}{$REGION 'Documentation'}{$ENDIF}
+/// <summary>
+///   Compares two strings. Uf CaseSensitive flag is set to True, comparing will
+///   be character's case sensitive.
+/// </summary>
+/// <param name="A">
+///   First string.
+/// </param>
+/// <param name="B">
+///   Second string.
+/// </param>
+/// <param name="CaseSensitive">
+///   CaseSensitive flag.
+/// </param>
+/// <returns>
+///   Returns a value less than 0 if A < B, a value greater than 0 if A > B, and
+///   0 if A = B.
+/// </returns>
+{$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 function StringCompare(const A, B: String; CaseSensitive: Boolean): Integer;
 {$IFDEF SUPPORTS_REGION}{$ENDREGION}{$ENDIF}
 
